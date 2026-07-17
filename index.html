@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Famicom - Killer Instinct</title>
+    <style>
+        body {
+            background-color: #111;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #ffcc00;
+            text-shadow: 2px 2px #ff0000;
+        }
+        /* Tamaño del contenedor del juego */
+        .emulador-container {
+            width: 640px;
+            height: 480px;
+            max-width: 100%;
+            background-color: #000;
+            border: 4px solid #333;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Killer Instinct - Super Famicom</h1>
+
+    <!-- Contenedor donde se cargará el juego -->
+    <div class="emulador-container">
+        <div id="game"></div>
+    </div>
+
+    <!-- Script de EmulatorJS -->
+    <script>
+        // Configuración de EmulatorJS
+        EJS_player = '#game';
+        EJS_biosUrl = ''; // SNES no suele necesitar BIOS
+        EJS_gameUrl = 'instingkiller.zip'; // <- Asegúrate de que el juego esté en la misma carpeta con este nombre
+        EJS_core = 'snes'; // Indica que es de Super Nintendo
+        EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/'; // Archivos del sistema de EmulatorJS
+    </script>
+    <script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
+
+</body>
+</html>
